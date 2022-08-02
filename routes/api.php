@@ -1,5 +1,7 @@
 <?php
+// header('Access-Control-Allow-Origin: http://localhost:3000');
 
+use App\Http\Controllers\Api\PrototypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/prototypes', [PrototypeController::class, 'index']);
+
+Route::get('/gallery', [PrototypeController::class, 'gallery']);
+
+Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
