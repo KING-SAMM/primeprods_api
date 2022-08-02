@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('prototypes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->string('image')->nullable();
+            $table->string('tags');
+            $table->string('company');
+            $table->string('location');
+            $table->string('email');
+            $table->string('logo')->nullable();
+            $table->string('website');
+            $table->longText('description');
             $table->timestamps();
         });
     }
