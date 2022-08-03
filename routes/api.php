@@ -20,8 +20,11 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/prototypes', [PrototypeController::class, 'index']);
+Route::get('/prototypes', [PrototypeController::class, 'index'])
+                ->middleware('guest');
 
-Route::get('/gallery', [PrototypeController::class, 'gallery']);
+Route::get('/gallery', [PrototypeController::class, 'gallery'])
+                ->middleware('guest');
 
-Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
+Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show'])
+                ->middleware('guest');
