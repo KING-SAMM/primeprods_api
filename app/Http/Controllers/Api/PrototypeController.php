@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Prototype;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Created;
 
 class PrototypeController extends Controller
 {
@@ -38,10 +40,11 @@ class PrototypeController extends Controller
     /**
      * Get single prototype
      * 
-     * @return array<string>
+     * 
      */
     public function show(Prototype $prototype)
     {
+        // dd($prototype);
         return response()->json([
             'prototype' => $prototype
         ]);

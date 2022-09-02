@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relationship to Prototype
+     */
+    public function prototypes()
+    {
+        return $this->hasMany(Prototype::class, 'user_id');
+    }
 }
