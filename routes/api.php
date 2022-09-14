@@ -28,10 +28,16 @@ Route::get('/', [PrototypeController::class, 'index'])
 // Get/Show all prototypes in a gallery 
 Route::get('/gallery', [PrototypeController::class, 'gallery'])
                 ->middleware('guest');
+                
 
 // Get/Show single prototype 
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show'])
                 ->middleware('guest');
+
+// Store prototype data
+Route::post('/prototypes/create', [PrototypeController::class, 'store'])
+                // ->middleware('auth')
+                ->name('create');   
                 
 
 // Get/Show all users                 
@@ -48,10 +54,6 @@ Route::get('/users/{user}', [UserController::class, 'show'])
 // Route::post('/register', [UserController::class, 'store'])
 //                 ->middleware('guest')
 //                 ->name('register');
-
-// Store prototype data
-// Route::post('/prototypes', [CreatedPrototypeController::class, 'store'])
-//                 ->middleware('auth')
-//                 ->name('create');                
+             
 
                 

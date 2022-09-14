@@ -79,3 +79,4 @@ class CreatedPrototypeController extends Controller
         return response()->noContent();
     }
 }
+
