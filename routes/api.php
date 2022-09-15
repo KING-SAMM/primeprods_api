@@ -38,6 +38,9 @@ Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show'])
 Route::post('/prototypes/create', [PrototypeController::class, 'store'])
                 // ->middleware('auth')
                 ->name('create');   
+
+// Update prototype form data
+Route::put('/prototypes/{prototype}', [PrototypeController::class, 'update'])->middleware('auth');
                 
 
 // Get/Show all users                 
